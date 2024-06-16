@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/models/user.dart';
+import 'package:netninjapp/landing_page.dart';
+import '../models/user.dart';
 import 'package:provider/provider.dart';
 
-import 'authenticate/authenticate.dart';
-import 'home/home.dart';
+// import 'authenticate/authenticate.dart';
+import 'screens/authenticate/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
@@ -13,16 +14,15 @@ class Wrapper extends StatelessWidget {
     // returns home or authenticate
     // accessing values from our provider package
     final user = Provider.of<AnonUser?>(context);
-    // final user = null;
     print('Inside Wrapper ${user}');
     // check if logged in then return authenticate or Home
     if (user == null){
-      print("Inside Authenticate");
+      print("Inside Authenticate user is null");
       return Authenticate();
     }
     else{
-      print("User is not null - Home is entered");
-      return Home();
+      print("User is not null - LandingPage is entered");
+      return LandingPage();
     }
     // }
     // return Authenticate();

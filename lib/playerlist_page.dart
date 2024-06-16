@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:netninjapp/screens/home/settings_form.dart';
+// import 'package:get/get.dart';
+import 'package:netninjapp/settings_form.dart';
 import '../../models/brew.dart';
 import '../../services/auth.dart';
 import 'package:netninjapp/services/database.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'brew_list.dart';
+import 'package:netninjapp/brewlist.dart';
 
 
-class Home extends StatelessWidget {
+class PlayerListPage extends StatelessWidget {
 
   final AuthService _auth = AuthService();
 
-  Home({super.key});
+  PlayerListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class Home extends StatelessWidget {
     void _showSettingsPanel() {
       showModalBottomSheet(context: context, builder: (context){
         return SettingsForm();
+        
       });
     }
     // wrap home widget with stream provider
@@ -31,7 +32,7 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.brown[50],
         appBar: AppBar(
-          title: Text("Brew Coffee"),
+          title: Text("Registered Players-List"),
           backgroundColor: Colors.brown[400],
           elevation: 0.0,
           actions: <Widget>[
@@ -51,6 +52,7 @@ class Home extends StatelessWidget {
             ),
             TextButton.icon(
               onPressed: (){
+                print("Trying to Show Settings Panel");
                 return _showSettingsPanel();
               },
             icon: Icon(Icons.settings),
