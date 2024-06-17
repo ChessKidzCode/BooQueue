@@ -21,7 +21,8 @@ class Home extends StatelessWidget {
 
     void _showSettingsPanel() {
       showModalBottomSheet(context: context, builder: (context){
-        return SettingsForm();
+        // return SettingsForm();
+        return Text("hgjhgj");
       });
     }
     // wrap home widget with stream provider

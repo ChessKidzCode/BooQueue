@@ -35,7 +35,8 @@ class _LandingPageState extends State<LandingPage> {
     Loadfoodpagebody(),
     PlayerListPage(),
     // PracticePage3(),
-    CartPage()
+    // CartPage(),
+    BrewList()
   ];
 
   void _navigateBottomBar(int index){

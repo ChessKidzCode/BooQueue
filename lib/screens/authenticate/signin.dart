@@ -29,7 +29,7 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text('SignIn in To Coffee Crew'),
+        title: Text('Sign In to BooQueue'),
         actions: <Widget>[
           TextButton.icon(onPressed: (){
             widget.toggleView();  
@@ -46,7 +46,12 @@ class _SignInState extends State<SignIn> {
             children: <Widget>[
               SizedBox(height: 20.0,),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                decoration: textInputDecoration.copyWith(
+                  hintText: 'Email',
+                  fillColor: Colors.purple.withOpacity(0.1),
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
+                ),
                 validator: (value) => value!.isEmpty ? 'Enter an Email' : null,
                 onChanged: (val){
                   // print(val);
@@ -54,10 +59,16 @@ class _SignInState extends State<SignIn> {
                     email = val;
                   });
                 },
+                
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'Password'),
+                decoration: textInputDecoration.copyWith(
+                  hintText: 'Password',
+                  fillColor: Colors.purple.withOpacity(0.1),
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
+                ),
                 obscureText: true,
                 validator: (value) => value!.length < 6 ? 'Enter 6 or more characters' : null,
                 onChanged: (val){
@@ -69,7 +80,7 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0,),
               ElevatedButton(
-                child: Text('Sign In', style: TextStyle(color: Colors.white),),
+                child: Text('Login', style: TextStyle(color: Colors.white),),
                 onPressed: () async {
                  if (_formkey.currentState?.validate() == true){  //validate() checks validator in formfields to validate if satisfied
                     setState(() {
@@ -84,6 +95,11 @@ class _SignInState extends State<SignIn> {
                     }
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: Colors.purple,
+                      ),
                 ),
               SizedBox(height: 12.0,),
               Text(error, style: TextStyle(color: Colors.red, fontSize: 14.0),)

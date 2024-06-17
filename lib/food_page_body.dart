@@ -47,8 +47,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
-    final user = Provider.of<UserData>(context);
+    // final user = Provider.of<UserData>(context);
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 209, 219, 181),
       appBar: AppBar(
         elevation: 0,
         actions: [
@@ -58,10 +59,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               },
               icon: Icon(Icons.facebook))
         ],
-        backgroundColor: Colors.green[300],
-        title: Text("Welcome ${user.name}"),
+        backgroundColor: Colors.green[200],
+        title: Text("Welcome Mavuso"),
       ),
       drawer: Drawer(
+        backgroundColor: Color.fromARGB(255, 209, 219, 181),
         child: Column(
           children: [
             DrawerHeader(

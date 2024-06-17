@@ -26,7 +26,7 @@ class PopularFoodDetail extends StatelessWidget {
     print("page is id"+pageId.toString());
     print("product name is "+product.name);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 209, 219, 181),
       body: Stack(
         children: [
           //background Image
@@ -81,7 +81,7 @@ class PopularFoodDetail extends StatelessWidget {
                     Positioned(
                       right: 5,top: 3,
                       
-                      child: BigText(text: Get.find<PopularProductController>().totalItems.toString(), size: 14, color: Colors.white,),
+                      child: Text(Get.find<PopularProductController>().totalItems.toString(),),
                     ):Container()
                   ],);
                 })
@@ -113,7 +113,7 @@ class PopularFoodDetail extends StatelessWidget {
                       children: [
                         AppColumn(text: product.name!,stars: product.quantity!,),
                         SizedBox(height: Dimensions.height20,),
-                        BigText(text: "Introduce",),
+                        Text("Introduce",),
                         SizedBox(height: Dimensions.height10,),
                         Expanded(child: SingleChildScrollView(child: ExpandableTextWidget(text: product.description)))
                         // BigText(text: "Greek Spinach mixed with Basotho pork smothered in vaseline")
@@ -152,7 +152,7 @@ class PopularFoodDetail extends StatelessWidget {
                     },
                     child: Icon(Icons.remove, color: AppColors.signColor,)),
                   SizedBox(width: Dimensions.width10/2,),
-                  BigText(text: popularProduct.inCartItems.toString()),
+                  Text(popularProduct.inCartItems.toString()),
                   SizedBox(width: Dimensions.width10/2,),
                   GestureDetector(
                     onTap: (){
@@ -170,7 +170,7 @@ class PopularFoodDetail extends StatelessWidget {
                 width: 100,
                 height: 100,
                 // padding: EdgeInsets.only(top: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height20),   
-                  child: BigText(text: "R ${product.price!} "+"| Add to Cart", color: Colors.black,),
+                  child: Text("R ${product.price!} "+"| Add to Cart",),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius20),
                   // color: AppColors.mainColor

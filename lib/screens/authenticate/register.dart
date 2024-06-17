@@ -28,13 +28,13 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text('Register in To Coffee Crew'),
+        title: Text('Register To BooQueue'),
         actions: <Widget>[
           TextButton.icon(onPressed: (){
             widget.toggleView();
           },
           icon: Icon(Icons.person),
-          label: Text("Sign Up")),
+          label: Text("Login")),
         ],
       ),
       body: Container(
@@ -45,7 +45,12 @@ class _RegisterState extends State<Register> {
             children: <Widget>[
               SizedBox(height: 20.0,),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                decoration: textInputDecoration.copyWith(
+                  hintText: 'Email',
+                  fillColor: Colors.purple.withOpacity(0.1),
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
+                  ),
                 validator: (value) => value!.isEmpty ? 'Enter an Email' : null,
                 onChanged: (val){
                   // print(val);
@@ -53,10 +58,16 @@ class _RegisterState extends State<Register> {
                     email = val;
                   });
                 },
+                
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'Password'),
+                decoration: textInputDecoration.copyWith(
+                  hintText: 'Password',
+                  fillColor: Colors.purple.withOpacity(0.1),
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
+                  ),
                 obscureText: true,
                 validator: (value) => value!.length < 6 ? 'Enter 6 or more characters' : null,
                 onChanged: (val){
@@ -68,9 +79,9 @@ class _RegisterState extends State<Register> {
               ),
               SizedBox(height: 20.0,),
               ElevatedButton(
-                child: Text('Register', style: TextStyle(color: Colors.white),),
+                child: Text('Sign Up', style: TextStyle(color: Colors.white),),
                 onPressed: () async {
-                  print(_formkey.currentState?.validate());
+                  print("Form Key current State ${_formkey.currentState?.validate()}");
                   if (_formkey.currentState?.validate() == true){  //validate() checks validator in formfields to validate if satisfied
                     setState(() {
                       loading = true;
@@ -84,11 +95,15 @@ class _RegisterState extends State<Register> {
                       });
                     }
                   }
-                  
                 },
+                style: ElevatedButton.styleFrom(
+                        shape: const StadiumBorder(),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: Colors.purple,
+                      ),
                 ),
               SizedBox(height: 12.0,),
-              Text(error, style: TextStyle(color: Colors.red, fontSize: 14.0),)
+              Text(error, style: TextStyle(color: Colors.red, fontSize: 15.0),)
             ],
           ),
         ),
@@ -96,3 +111,4 @@ class _RegisterState extends State<Register> {
     );
   }
 }
+

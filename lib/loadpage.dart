@@ -20,7 +20,7 @@ class LoadPage extends StatelessWidget {
       value: AuthService().user,
       initialData: null,
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'BooQue Registration App',
         
         home: Wrapper(),
       ),

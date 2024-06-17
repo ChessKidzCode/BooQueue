@@ -30,10 +30,10 @@ class PlayerListPage extends StatelessWidget {
       value: DatabaseService().brews,
       initialData: [],
       child: Scaffold(
-        backgroundColor: Colors.brown[50],
+        backgroundColor: Color.fromARGB(255, 209, 219, 181),
         appBar: AppBar(
-          title: Text("Registered Players-List"),
-          backgroundColor: Colors.brown[400],
+          title: Text("Chess Players-List"),
+          backgroundColor: Colors.green[200],
           elevation: 0.0,
           actions: <Widget>[
             TextButton.icon(

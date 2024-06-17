@@ -6,31 +6,34 @@ import '../models/user.dart';
 
 class DatabaseService{
   // collection Reference
-  final CollectionReference brewCrew = FirebaseFirestore.instance.collection("brews");
+  final CollectionReference brewCrew = FirebaseFirestore.instance.collection("player-details");
   // List<Brew> b = []; 
-  var a = FirebaseFirestore.instance
-    .collection('brews')
-    .get()
-    .then((QuerySnapshot querySnapshot) {
-        querySnapshot.docs.forEach((doc) {
-            print(Brew(
-              name: doc["name"],
-              sugars: doc["sugars"],
-              strength: doc["strength"]
-            ));
-        });
+  // var a = FirebaseFirestore.instance
+  //   .collection('brews')
+  //   .get()
+  //   .then((QuerySnapshot querySnapshot) {
+  //       querySnapshot.docs.forEach((doc) {
+  //           print(Brew(
+  //             name: doc["name"],
+  //             sugars: doc["sugars"],
+  //             strength: doc["strength"]
+  //           ));
+  //       });
     
-    });
+  //   });
   
   final String? uid;
   DatabaseService({this.uid});
 
-  Future updateUserData(String sugars, String name, int strength) async {
+  Future updateUserData(String sugars, String name, int strength, String birthday, String order, int price) async {
     
     return await brewCrew.doc(uid).set({
       "name": name,
       "sugars": sugars,
-      "strength": strength
+      "strength": strength,
+      "birthday": birthday,
+      "order": order,
+      "price": price
     });
     
   }
@@ -43,7 +46,10 @@ class DatabaseService{
       return Brew(
         name: doc["name"] ?? '',
         sugars: doc["sugars"] ?? '0',
-        strength: doc["strength"] ?? 0
+        strength: doc["strength"] ?? 0,
+        birthday: doc["birthday"] ?? '2024/01/01',
+        order: doc["order"] ?? 'Kota Mince',
+        price: doc["price"] ?? 1,
       );
     },).toList();
   }
@@ -60,7 +66,9 @@ class DatabaseService{
       uid: uid,
       name: snapshot["name"],
       sugars: snapshot["sugars"],
-      strength: snapshot["strength"]
+      strength: snapshot["strength"],
+      birthday: snapshot["birthday"],
+    
     );
   }
 

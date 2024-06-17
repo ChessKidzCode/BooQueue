@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'package:netninjapp/loadpage.dart';
 
+import 'newpage.dart';
 import 'routes/route_helper.dart';
 import 'helper/dependencies.dart' as dep;
 
@@ -21,6 +22,7 @@ import 'controllers/product_controller.dart';
 
 // import 'provider_training.dart';
 
+import 'screens/authenticate/register.dart';
 import 'screens/wrapper.dart';
 
   void main() async {
