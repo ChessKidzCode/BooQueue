@@ -1,4 +1,4 @@
-class Order{
+class Orders{
   final String name;
   // final String balance;
   // final int rating;
@@ -6,7 +6,7 @@ class Order{
   final String order;
   final int price;
 
-  Order(
+  Orders(
       {required this.name,
       // required this.balance,
       // required this.rating,

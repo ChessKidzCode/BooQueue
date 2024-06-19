@@ -13,7 +13,7 @@ import 'package:netninjapp/playerlist_page.dart';
 import 'package:netninjapp/services/database.dart';
 import 'package:provider/provider.dart';
 
-import 'models/order.dart';
+import 'models/orders.dart';
 // import 'package:mobileapp/routes/route_helper.dart';
 
 // import 'ticket_combo_display.dart';
@@ -36,7 +36,7 @@ class _LandingPageState extends State<LandingPage> {
     PlayerListPage(),
     // PracticePage3(),
     // CartPage(),
-    BrewList()
+    // BrewList()
   ];
 
   void _navigateBottomBar(int index){
@@ -55,7 +55,7 @@ class _LandingPageState extends State<LandingPage> {
           items: [
             BottomNavigationBarItem(icon:Icon(Icons.home,), label: "Profile Page"),
             BottomNavigationBarItem(icon:Icon(Icons.book), label: "Player List"),
-            BottomNavigationBarItem(icon:Icon(Icons.store_mall_directory), label: "Cart Page"),
+            // BottomNavigationBarItem(icon:Icon(Icons.store_mall_directory), label: "Cart Page"),
           ],
         ),
       );

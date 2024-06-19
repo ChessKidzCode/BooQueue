@@ -14,5 +14,5 @@ class UserData{
   final String? birthday;
  
 
-  UserData({ this.uid, this.name, this.balance, this.rating, required this.birthday, });
+  UserData({ required this.uid,required this.name, this.balance, this.rating, required this.birthday, });
 }

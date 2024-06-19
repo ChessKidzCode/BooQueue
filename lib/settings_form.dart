@@ -25,7 +25,7 @@ class _SettingdFormState extends State<SettingsForm> {
   DateTime birthDate = DateTime(2024); // instance of DateTime
   String? _birthDateInString;
   bool isDateSelected= false;
-  String? _name;
+  String? _currentOrder;
   int? _price;
 
 
@@ -33,12 +33,13 @@ class _SettingdFormState extends State<SettingsForm> {
   Widget build(BuildContext context) {
 
     final user = Provider.of<AnonUser>(context);
+    // final user = Provider.of<UserData>(context);
     // String initValue="Select your Birth Date";
 
     return StreamBuilder<UserData>(
       stream: DatabaseService(uid: user.uid).userData,
       builder: (context, snapshot) {
-        if(snapshot.hasData){
+        // if(snapshot.hasData){
           // Map<String,dynamic>.from(snapshot.data as Map);
           // var snapshotData = Map<String,dynamic>.from(snapshot.data as Map);
           UserData userData = snapshot.data as UserData; //typecasting map into userdata object
@@ -116,17 +117,12 @@ class _SettingdFormState extends State<SettingsForm> {
                     // validate fomr fields to make sure they are not null then uodate values into firestore
                     if (_formKey.currentState!.validate()){
                       await DatabaseService(uid: user.uid).updateUserData(
-                        // _currentSugars ?? userData.sugars!,
-                        _currentBalance ?? '0',
                         // _currentName ?? userData.name!,
                         _currentName ?? 'Tshepo',
                         // _currentStrength ?? userData.strength!,
                         _currentRating ?? 0,
                         // _birthDateInString ?? userData.birthday!,
                         _birthDateInString ?? '2024/01/01',
-                        _name ?? 'Kota Mince',
-                    
-
                         );
                         // _currentStrength ?? 0);
                         Navigator.pop(context);
@@ -143,9 +139,9 @@ class _SettingdFormState extends State<SettingsForm> {
               ],
             ),
           );
-        }else{
-          return Loading();
-        }
+        // }else{
+        //   return Loading();
+        // }
         
       }
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:netninjapp/models/orders.dart';
 // import 'package:netninjapp/screens/home/settings_form.dart';
 // import '../../models/order.dart';
 import '../../services/auth.dart';
@@ -26,7 +27,7 @@ class Home extends StatelessWidget {
       });
     }
     // wrap home widget with stream provider
-    return StreamProvider<List<Order>>.value(
+    return StreamProvider<List<Orders>>.value(
       value: DatabaseService().orders,
       initialData: [],
       child: Scaffold(

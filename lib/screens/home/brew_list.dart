@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netninjapp/brew_tile.dart';
-import 'package:netninjapp/models/order.dart';
+import 'package:netninjapp/models/orders.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +17,7 @@ class BrewList extends StatefulWidget {
 class _BrewListState extends State<BrewList> {
   @override
   Widget build(BuildContext context) {
-    final orders = Provider.of<List<Order>>(context);
+    final orders = Provider.of<List<Orders>>(context);
     // final brew = brews;
     print("inside brew list.dart");
     // print(brew);

@@ -8,6 +8,8 @@ import 'package:netninjapp/utils/dimensions.dart';
 import 'package:netninjapp/widgets/app_icon.dart';
 import 'package:netninjapp/widgets/big_text.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+
+import '../services/database.dart';
 // import 'package:mobileapp/utils/app_constants.dart';
 
 
@@ -215,6 +217,7 @@ class CartPage extends StatelessWidget {
               // child: 
               AnimatedButton(
                 onPress: (){
+                  DatabaseService().updateBalance(CartController.totalAmount, CartController.getItems.toString());
                   CartController.addToHistory();
                 },
                 width: 200,

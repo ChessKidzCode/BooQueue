@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'models/order.dart';
+import 'models/orders.dart';
 
 class OrderTile extends StatelessWidget {
-  final Order order;
+  final Orders order;
 
   OrderTile({ required this.order });
 

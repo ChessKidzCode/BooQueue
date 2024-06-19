@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/models/order.dart';
+import 'package:netninjapp/models/orders.dart';
 
 class BrewTile extends StatelessWidget {
-  final Order brew;
+  final Orders brew;
 
   BrewTile({ required this.brew });
 
