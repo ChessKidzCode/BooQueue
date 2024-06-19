@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../models/brew.dart';
+import 'models/order.dart';
 
-class BrewTile extends StatelessWidget {
-  final Brew brew;
+class OrderTile extends StatelessWidget {
+  final Order order;
 
-  BrewTile({ required this.brew });
+  OrderTile({ required this.order });
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class BrewTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.brown[brew.strength],
+            backgroundColor: Colors.brown[order.price],
           ),
-          title: Text(brew.name),
-          subtitle: Text('Takes ${brew.sugars}'),
+          title: Text(order.name),
+          subtitle: Text('Rating ${order.price}'),
         ),
       ),
     );

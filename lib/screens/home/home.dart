@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/screens/home/settings_form.dart';
-import '../../models/brew.dart';
+// import 'package:netninjapp/screens/home/settings_form.dart';
+// import '../../models/order.dart';
 import '../../services/auth.dart';
 import 'package:netninjapp/services/database.dart';
 import 'package:provider/provider.dart';
@@ -26,14 +26,14 @@ class Home extends StatelessWidget {
       });
     }
     // wrap home widget with stream provider
-    return StreamProvider<List<Brew>>.value(
-      value: DatabaseService().brews,
+    return StreamProvider<List<Order>>.value(
+      value: DatabaseService().orders,
       initialData: [],
       child: Scaffold(
         backgroundColor: Colors.brown[50],
         appBar: AppBar(
           title: Text("Brew Coffee"),
-          backgroundColor: Colors.brown[400],
+          backgroundColor: Color.fromARGB(255, 209, 219, 181),
           elevation: 0.0,
           actions: <Widget>[
             TextButton.icon(

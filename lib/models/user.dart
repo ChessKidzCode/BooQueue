@@ -9,10 +9,10 @@ class AnonUser{
 class UserData{
   final String? uid;
   final String? name;
-  final String? sugars;
-  final int? strength;
+  final String? balance;
+  final int? rating;
   final String? birthday;
  
 
-  UserData({ this.uid, this.name, this.sugars, this.strength, required this.birthday, });
+  UserData({ this.uid, this.name, this.balance, this.rating, required this.birthday, });
 }

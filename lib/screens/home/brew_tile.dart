@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/models/brew.dart';
+import 'package:netninjapp/models/order.dart';
 
 class BrewTile extends StatelessWidget {
-  final Brew brew;
+  final Order brew;
 
   BrewTile({ required this.brew });
 
@@ -15,10 +15,10 @@ class BrewTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.brown[brew.strength],
+            backgroundColor: Colors.brown[brew.price],
           ),
           title: Text(brew.name),
-          subtitle: Text('Takes ${brew.sugars}'),
+          subtitle: Text('Rating ${brew.name}'),
         ),
       ),
     );

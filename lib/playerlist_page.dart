@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 import 'package:netninjapp/settings_form.dart';
-import '../../models/brew.dart';
+import 'models/order.dart';
 import '../../services/auth.dart';
 import 'package:netninjapp/services/database.dart';
 import 'package:provider/provider.dart';
@@ -26,8 +26,8 @@ class PlayerListPage extends StatelessWidget {
       });
     }
     // wrap home widget with stream provider
-    return StreamProvider<List<Brew>>.value(
-      value: DatabaseService().brews,
+    return StreamProvider<List<Order>>.value(
+      value: DatabaseService().orders,
       initialData: [],
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 209, 219, 181),

@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:netninjapp/models/brew.dart';
+import 'package:netninjapp/models/user.dart';
+// import 'package:netninjapp/models/order.dart';
 
-import '../models/user.dart';
+// import '../models/user.dart';
 
 class DatabaseService{
   // collection Reference
@@ -25,37 +26,36 @@ class DatabaseService{
   final String? uid;
   DatabaseService({this.uid});
 
-  Future updateUserData(String sugars, String name, int strength, String birthday, String order, int price) async {
+  Future updateUserData(String balance, String name, int rating, String birthday, String order) async {
     
     return await brewCrew.doc(uid).set({
       "name": name,
-      "sugars": sugars,
-      "strength": strength,
-      "birthday": birthday,
+      // "sugars": sugars,
+      "rating": rating,
+      "balance": balance,
       "order": order,
-      "price": price
     });
     
   }
   // brew list from snapshot
-  List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot){
+  List<Order> _brewListFromSnapshot(QuerySnapshot snapshot){
     return snapshot.docs.map((doc) {
       // var brewData =  Map<String,dynamic>.from(snapshot.docs.last.data() as Map);
       print("insode brewlist from snapshot");
       print(doc["name"]);
-      return Brew(
-        name: doc["name"] ?? '',
-        sugars: doc["sugars"] ?? '0',
-        strength: doc["strength"] ?? 0,
-        birthday: doc["birthday"] ?? '2024/01/01',
+      return Order(
+        name: doc["name"] ?? 'msese',
+        // balance: doc["balance"] ?? '0',
+        // rating: doc["rating"] ?? 0,
+        // birthday: doc["birthday"] ?? '2024/01/01',
         order: doc["order"] ?? 'Kota Mince',
-        price: doc["price"] ?? 1,
+        price: doc["price"] ?? 100,
       );
     },).toList();
   }
   
   // get brews Stream
-  Stream<List<Brew>> get brews {
+  Stream<List<Order>> get orders {
     return brewCrew.snapshots().map(_brewListFromSnapshot);
   }
 
@@ -65,8 +65,8 @@ class DatabaseService{
     return UserData(
       uid: uid,
       name: snapshot["name"],
-      sugars: snapshot["sugars"],
-      strength: snapshot["strength"],
+      balance: snapshot["balance"],
+      rating: snapshot["rating"],
       birthday: snapshot["birthday"],
     
     );

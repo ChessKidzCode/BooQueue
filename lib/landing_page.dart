@@ -13,7 +13,7 @@ import 'package:netninjapp/playerlist_page.dart';
 import 'package:netninjapp/services/database.dart';
 import 'package:provider/provider.dart';
 
-import '../models/brew.dart';
+import 'models/order.dart';
 // import 'package:mobileapp/routes/route_helper.dart';
 
 // import 'ticket_combo_display.dart';

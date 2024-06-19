@@ -20,8 +20,8 @@ class _SettingdFormState extends State<SettingsForm> {
   final List<String> sugars = ['0', '1', '2', '3', '4'];
 
   String? _currentName;
-  String? _currentSugars;
-  int? _currentStrength;
+  String? _currentBalance;
+  int? _currentRating;
   DateTime birthDate = DateTime(2024); // instance of DateTime
   String? _birthDateInString;
   bool isDateSelected= false;
@@ -117,15 +117,15 @@ class _SettingdFormState extends State<SettingsForm> {
                     if (_formKey.currentState!.validate()){
                       await DatabaseService(uid: user.uid).updateUserData(
                         // _currentSugars ?? userData.sugars!,
-                        _currentSugars ?? '0',
+                        _currentBalance ?? '0',
                         // _currentName ?? userData.name!,
                         _currentName ?? 'Tshepo',
                         // _currentStrength ?? userData.strength!,
-                        _currentStrength ?? 0,
+                        _currentRating ?? 0,
                         // _birthDateInString ?? userData.birthday!,
                         _birthDateInString ?? '2024/01/01',
                         _name ?? 'Kota Mince',
-                        _price ?? 1, 
+                    
 
                         );
                         // _currentStrength ?? 0);

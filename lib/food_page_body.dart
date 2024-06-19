@@ -22,7 +22,7 @@ class FoodPageBody extends StatefulWidget {
 }
 
 class _FoodPageBodyState extends State<FoodPageBody> {
-  PageController pageController = PageController(viewportFraction: 0.6);  //sets the controller at pageview to certain fraction
+  PageController pageController = PageController(viewportFraction: 0.7);  //sets the controller at pageview to certain fraction
   var _currPageValue=0.0;
   double scaleFactor=0.8;
   double _height=Dimensions.pageViewContainer;
