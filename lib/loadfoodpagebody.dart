@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/food_page_body.dart';
+import 'package:booqueue/food_page_body.dart';
 
 class Loadfoodpagebody extends StatelessWidget {
   const Loadfoodpagebody({super.key});

@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 // import 'package:mobileapp/controllers/popular_product_controller.dart';
 // import 'package:mobileapp/pages/cart/cart_page.dart';
 // import 'package:mobileapp/pages/home/main_food_page.dart';
-import 'package:netninjapp/controllers/cart_controller.dart';
-import 'package:netninjapp/controllers/product_controller.dart';
-import 'package:netninjapp/routes/route_helper.dart';
-import 'package:netninjapp/utils/colors.dart';
-import 'package:netninjapp/utils/dimensions.dart';
-import 'package:netninjapp/widgets/app_column.dart';
-import 'package:netninjapp/widgets/app_icon.dart';
-import 'package:netninjapp/widgets/big_text.dart';
-import 'package:netninjapp/widgets/expandable_text.dart';
+import 'package:booqueue/controllers/cart_controller.dart';
+import 'package:booqueue/controllers/product_controller.dart';
+import 'package:booqueue/routes/route_helper.dart';
+import 'package:booqueue/utils/colors.dart';
+import 'package:booqueue/utils/dimensions.dart';
+import 'package:booqueue/widgets/app_column.dart';
+import 'package:booqueue/widgets/app_icon.dart';
+import 'package:booqueue/widgets/big_text.dart';
+import 'package:booqueue/widgets/expandable_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   final int pageId;
@@ -141,43 +141,35 @@ class PopularFoodDetail extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius20),
-                color: Colors.white
+                borderRadius: BorderRadius.circular(Dimensions.radius15/2),
+                // color: Colors.white
               ),
               child: Row(
                 children: [
-                  GestureDetector(
-                    onTap: (){
-                      popularProduct.setQuantity(false);
-                    },
-                    child: Icon(Icons.remove, color: AppColors.signColor,)),
+                  ElevatedButton(
+                        onPressed: () {
+                          popularProduct.setQuantity(false);
+                        },
+                        child: Icon(
+                          Icons.remove,
+                          color: AppColors.signColor,
+                        )),
                   SizedBox(width: Dimensions.width10/2,),
-                  Text(popularProduct.inCartItems.toString()),
+                  ElevatedButton(onPressed: (){}, child: Text(popularProduct.inCartItems.toString())),
                   SizedBox(width: Dimensions.width10/2,),
-                  GestureDetector(
-                    onTap: (){
-                      popularProduct.setQuantity(true);
-                    },
-                    child: Icon(Icons.add, color: AppColors.signColor,))
+                  ElevatedButton(onPressed: (){
+                    popularProduct.setQuantity(true);
+                  }, child: Icon(Icons.add, color: AppColors.signColor,)),
                 ],
               ),
             ),
-            GestureDetector(
-              onTap: (){
-                    popularProduct.addItem(product);
-                  },
-              child: Container(
-                width: 100,
-                height: 100,
-                // padding: EdgeInsets.only(top: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height20),   
-                  child: Text("R ${product.price!} "+"| Add to Cart",),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  // color: AppColors.mainColor
-                  color: Colors.red
-                ),
-              ),
-            ),
+              ElevatedButton(
+                onPressed: (){
+                  popularProduct.addItem(product);
+                },
+                child: Text("R ${product.price!} "+"| Add to Cart",),
+
+              )
           ],
         ),
       );

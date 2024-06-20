@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:netninjapp/brewlist.dart';
-import 'package:netninjapp/food_detail.dart';
-import 'package:netninjapp/splash/splash_page.dart';
+import 'package:booqueue/brewlist.dart';
+import 'package:booqueue/food_detail.dart';
+import 'package:booqueue/splash/splash_page.dart';
 // import 'package:mobileapp/pages/ticket_combo_display.dart';
-import 'package:netninjapp/profile_page.dart';
-import 'package:netninjapp/playerlist_page.dart';
+import 'package:booqueue/profile_page.dart';
+import 'package:booqueue/playerlist_page.dart';
 
 import '../cart/cart_page.dart';
 import '../landing_page.dart';

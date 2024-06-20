@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/landing_page.dart';
+import 'package:booqueue/landing_page.dart';
 import '../models/user.dart';
 import 'package:provider/provider.dart';
 

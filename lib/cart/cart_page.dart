@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/controllers/cart_controller.dart';
-import 'package:netninjapp/controllers/product_controller.dart';
-import 'package:netninjapp/routes/route_helper.dart';
-import 'package:netninjapp/utils/colors.dart';
-import 'package:netninjapp/utils/dimensions.dart';
-import 'package:netninjapp/widgets/app_icon.dart';
-import 'package:netninjapp/widgets/big_text.dart';
+import 'package:booqueue/controllers/cart_controller.dart';
+import 'package:booqueue/controllers/product_controller.dart';
+import 'package:booqueue/routes/route_helper.dart';
+import 'package:booqueue/utils/colors.dart';
+import 'package:booqueue/utils/dimensions.dart';
+import 'package:booqueue/widgets/app_icon.dart';
+import 'package:booqueue/widgets/big_text.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 import '../services/database.dart';

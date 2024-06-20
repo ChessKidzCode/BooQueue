@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/constants/constants.dart';
+import 'package:booqueue/constants/constants.dart';
 
 import '../../constants/loading.dart';
 import '../../services/auth.dart';

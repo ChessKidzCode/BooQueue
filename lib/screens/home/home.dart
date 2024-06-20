@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/models/orders.dart';
+import 'package:booqueue/models/orders.dart';
 // import 'package:netninjapp/screens/home/settings_form.dart';
 // import '../../models/order.dart';
 import '../../services/auth.dart';
-import 'package:netninjapp/services/database.dart';
+import 'package:booqueue/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

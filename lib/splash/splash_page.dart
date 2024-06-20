@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/utils/dimensions.dart';
+import 'package:booqueue/utils/dimensions.dart';
 
 import '../../controllers/product_controller.dart';
 // import '../../controllers/recommended_product_controller.dart';

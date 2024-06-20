@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/models/user.dart';
+import 'package:booqueue/models/user.dart';
 import 'package:provider/provider.dart';
 
 import 'authenticate/authenticate.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/utils/dimensions.dart';
+import 'package:booqueue/utils/dimensions.dart';
 // import 'package:mobileapp/widgets/big_text.dart';
-import 'package:netninjapp/widgets/small_text.dart';
+import 'package:booqueue/widgets/small_text.dart';
 // import 'package:mobileapp/utils/dimensions.dart';
 // import 'package:mobileapp/widgets/small_text.dart';
   

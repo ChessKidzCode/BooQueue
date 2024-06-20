@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:netninjapp/utils/app_constants.dart';
+import 'package:booqueue/utils/app_constants.dart';
 
 import '../api/api_client.dart';
 

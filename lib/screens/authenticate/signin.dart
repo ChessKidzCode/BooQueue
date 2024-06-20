@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/constants/constants.dart';
+import 'package:booqueue/constants/constants.dart';
 
 import '../../constants/loading.dart';
 import '../../services/auth.dart';
@@ -25,9 +25,9 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Color.fromARGB(255, 209, 219, 181),
       appBar: AppBar(
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.green[200],
         elevation: 0.0,
         title: Text('Sign In to BooQueue'),
         actions: <Widget>[

@@ -20,9 +20,9 @@ class _BrewListState extends State<BrewList> {
     print("inside brew list.dart");
     // print(brew);
     orders.forEach((order){
-      print(order.name);
-      print(order.order);
-      // print(order.rating);
+      print("name: "+order.name);
+      print("order "+order.order);
+      print("rating "+order.rating.toString());
     });
    
     return ListView.builder(

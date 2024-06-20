@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/brewlist.dart';
+import 'package:booqueue/brewlist.dart';
 // import 'package:get/get.dart';
 // import 'package:mobileapp/controllers/popular_product_controller.dart';
-import 'package:netninjapp/cart/cart_page.dart';
-import 'package:netninjapp/food_page_body.dart';
-import 'package:netninjapp/loadfoodpagebody.dart';
-import 'package:netninjapp/routes/route_helper.dart';
-import 'package:netninjapp/tabview.dart';
+import 'package:booqueue/cart/cart_page.dart';
+import 'package:booqueue/food_page_body.dart';
+import 'package:booqueue/loadfoodpagebody.dart';
+import 'package:booqueue/routes/route_helper.dart';
+import 'package:booqueue/tabview.dart';
 // import 'package:mobileapp/pages/wrapper.dart';
 // import 'package:mobileapp/pages/stalls_admin_page.dart';
-import 'package:netninjapp/playerlist_page.dart';
-import 'package:netninjapp/services/database.dart';
+import 'package:booqueue/playerlist_page.dart';
+import 'package:booqueue/services/database.dart';
 import 'package:provider/provider.dart';
 
 import 'models/orders.dart';
@@ -47,7 +47,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.brown[500],
+        backgroundColor: Color.fromARGB(255, 209, 219, 181),
         body: _pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,

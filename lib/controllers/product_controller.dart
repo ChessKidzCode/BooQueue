@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/controllers/cart_controller.dart';
-import 'package:netninjapp/utils/colors.dart';
+import 'package:booqueue/controllers/cart_controller.dart';
+import 'package:booqueue/utils/colors.dart';
 // import 'package:mobileapp/controllers/cart_controller.dart';
 // import 'package:mobileapp/data/repository/popular_product_repo.dart';
 // import 'package:mobileapp/models/cart_model.dart';

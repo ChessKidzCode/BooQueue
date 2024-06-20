@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:netninjapp/loadpage.dart';
+import 'package:booqueue/loadpage.dart';
 
 import 'newpage.dart';
 import 'routes/route_helper.dart';

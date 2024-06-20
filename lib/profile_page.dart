@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:netninjapp/controllers/product_controller.dart';
-import 'package:netninjapp/tabview.dart';
+import 'package:booqueue/controllers/product_controller.dart';
+import 'package:booqueue/tabview.dart';
 // import 'package:mobileapp/pages/ticket_combo_display.dart';
 // import 'package:mobileapp/pages/landing_page.dart';
 // import 'package:mobileapp/pages/bookings_page.dart';

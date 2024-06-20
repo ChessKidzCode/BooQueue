@@ -1,7 +1,9 @@
+import 'package:booqueue/models/orders.dart';
 import 'package:flutter/material.dart';
-import 'package:netninjapp/constants/constants.dart';
-import 'package:netninjapp/constants/loading.dart';
-import 'package:netninjapp/models/user.dart';
+// import 'package:booqueue/constants/constants.dart';
+import 'package:booqueue/constants/constants.dart';
+import 'package:booqueue/constants/loading.dart';
+import 'package:booqueue/models/user.dart';
 import 'package:provider/provider.dart';
 
 import '../../services/database.dart';
@@ -20,7 +22,7 @@ class _SettingdFormState extends State<SettingsForm> {
   final List<String> sugars = ['0', '1', '2', '3', '4'];
 
   String? _currentName;
-  String? _currentBalance;
+  int? _currentBalance;
   int? _currentRating;
   DateTime birthDate = DateTime(2024); // instance of DateTime
   String? _birthDateInString;
@@ -33,13 +35,14 @@ class _SettingdFormState extends State<SettingsForm> {
   Widget build(BuildContext context) {
 
     final user = Provider.of<AnonUser>(context);
-    // final user = Provider.of<UserData>(context);
+    print("UID: "+user.uid);
+    // final orders = Provider.of<Orders>(context);
     // String initValue="Select your Birth Date";
 
     return StreamBuilder<UserData>(
       stream: DatabaseService(uid: user.uid).userData,
       builder: (context, snapshot) {
-        // if(snapshot.hasData){
+        if(snapshot.hasData){
           // Map<String,dynamic>.from(snapshot.data as Map);
           // var snapshotData = Map<String,dynamic>.from(snapshot.data as Map);
           UserData userData = snapshot.data as UserData; //typecasting map into userdata object
@@ -82,7 +85,8 @@ class _SettingdFormState extends State<SettingsForm> {
                 // ),
                 ListTile(
                   leading: Icon(Icons.calendar_today),
-                  title: Text(userData.birthday!),
+                  // title: Text(userData.birthday!),
+                  title: Text('2024/02/01'),
                   onTap: ()async{
                     final datePick= await showDatePicker(
                       context: context,
@@ -117,12 +121,26 @@ class _SettingdFormState extends State<SettingsForm> {
                     // validate fomr fields to make sure they are not null then uodate values into firestore
                     if (_formKey.currentState!.validate()){
                       await DatabaseService(uid: user.uid).updateUserData(
-                        // _currentName ?? userData.name!,
+                        // _currentName ?? userData.name,
                         _currentName ?? 'Tshepo',
-                        // _currentStrength ?? userData.strength!,
-                        _currentRating ?? 0,
+                      
+                        // _currentRating ?? userData.rating,
+                        _currentRating ?? 900,
+
+
+
                         // _birthDateInString ?? userData.birthday!,
-                        _birthDateInString ?? '2024/01/01',
+                        _birthDateInString ?? '2023/01/01',
+
+                        _currentBalance ?? 0,
+
+                        // _currentOrder ?? userData.order,
+                        _currentOrder ?? 'mince',
+
+
+                        // _price ?? userData.price,
+                        _price ?? 500,
+
                         );
                         // _currentStrength ?? 0);
                         Navigator.pop(context);
@@ -139,9 +157,9 @@ class _SettingdFormState extends State<SettingsForm> {
               ],
             ),
           );
-        // }else{
-        //   return Loading();
-        // }
+        }else{
+          return Loading();
+        }
         
       }
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netninjapp/utils/colors.dart';
-import 'package:netninjapp/utils/dimensions.dart';
-import 'package:netninjapp/widgets/big_text.dart';
-import 'package:netninjapp/widgets/icon_and_text.dart';
+import 'package:booqueue/utils/colors.dart';
+import 'package:booqueue/utils/dimensions.dart';
+import 'package:booqueue/widgets/big_text.dart';
+import 'package:booqueue/widgets/icon_and_text.dart';
 // import 'package:mobileapp/widgets/small_text.dart';
 
 class AppColumn extends StatelessWidget {

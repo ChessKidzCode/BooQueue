@@ -1,4 +1,4 @@
-import 'package:netninjapp/models/product_model.dart';
+import 'package:booqueue/models/product_model.dart';
 
 class CartModel {
   int? id;
