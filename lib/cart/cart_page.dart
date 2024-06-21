@@ -217,7 +217,7 @@ class CartPage extends StatelessWidget {
               // child: 
               AnimatedButton(
                 onPress: (){
-                  DatabaseService().updateBalance(CartController.totalAmount, CartController.getItems.toString());
+                  // DatabaseService().updateBalance(CartController.totalAmount, CartController.getItems.toString());
                   CartController.addToHistory();
                 },
                 width: 200,

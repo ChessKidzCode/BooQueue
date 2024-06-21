@@ -21,27 +21,28 @@ class _SettingdFormState extends State<SettingsForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> sugars = ['0', '1', '2', '3', '4'];
 
-  String? _currentName;
-  int? _currentBalance;
-  int? _currentRating;
+  String _currentName = 'Tshepo';
+  int _currentBalance = 100;
+  int _currentRating = 100;
   DateTime birthDate = DateTime(2024); // instance of DateTime
   String? _birthDateInString;
   bool isDateSelected= false;
-  String? _currentOrder;
-  int? _price;
+  String _currentOrder = 'Mincce';
+  int? _price = 500;
 
 
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<AnonUser>(context);
-    print("UID: "+user.uid);
+    final user = Provider.of<AnonUser?>(context);
+    print("UID: +${user!.uid}");
     // final orders = Provider.of<Orders>(context);
     // String initValue="Select your Birth Date";
 
     return StreamBuilder<UserData>(
       stream: DatabaseService(uid: user.uid).userData,
       builder: (context, snapshot) {
+        print("Inside snapshot: data?: ${snapshot.hasData}");
         if(snapshot.hasData){
           // Map<String,dynamic>.from(snapshot.data as Map);
           // var snapshotData = Map<String,dynamic>.from(snapshot.data as Map);
@@ -58,12 +59,22 @@ class _SettingdFormState extends State<SettingsForm> {
                 SizedBox(height: 20.0,),
                 TextFormField(
                   initialValue: userData.name,
-                  // initialValue: 'Msese',
+                  // initialValue: 'New Crew Member',
                   decoration: textInputDecoration,
                   validator: (value) {
                     return value!.isEmpty ? 'Please enter a name': null;
                   },
                   onChanged: (value) => setState(() => _currentName = value),
+                ),
+                SizedBox(height: 20.0,),
+                TextFormField(
+                  initialValue: userData.name,
+                  // initialValue: '1800 Default',
+                  decoration: textInputDecoration,
+                  validator: (value) {
+                    return value!.isEmpty ? 'What is your Rating?': null;
+                  },
+                  onChanged: (value) => setState(() => _currentRating = int.parse(value)),
                 ),
                 SizedBox(height: 20.0,),
                 // dropdown
@@ -122,12 +133,10 @@ class _SettingdFormState extends State<SettingsForm> {
                     if (_formKey.currentState!.validate()){
                       await DatabaseService(uid: user.uid).updateUserData(
                         // _currentName ?? userData.name,
-                        _currentName ?? 'Tshepo',
+                        userData.name ?? _currentName,
                       
                         // _currentRating ?? userData.rating,
                         _currentRating ?? 900,
-
-
 
                         // _birthDateInString ?? userData.birthday!,
                         _birthDateInString ?? '2023/01/01',
@@ -137,10 +146,8 @@ class _SettingdFormState extends State<SettingsForm> {
                         // _currentOrder ?? userData.order,
                         _currentOrder ?? 'mince',
 
-
                         // _price ?? userData.price,
                         _price ?? 500,
-
                         );
                         // _currentStrength ?? 0);
                         Navigator.pop(context);

@@ -25,8 +25,8 @@ class PlayerListPage extends StatelessWidget {
 
     void _showSettingsPanel() {
       showModalBottomSheet(context: context, builder: (context){
-        // return LoadSettingsForm();
-        return SettingsForm();
+        return LoadSettingsForm();
+        // return SettingsForm();
       });
     }
     // void _showMenuPanel() {

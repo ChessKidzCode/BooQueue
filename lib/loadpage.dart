@@ -19,11 +19,7 @@ class LoadPage extends StatelessWidget {
     return StreamProvider<AnonUser?>.value(
       value: AuthService().user,
       initialData: null,
-      child: MaterialApp(
-        title: 'BooQue Registration App',
-        
-        home: Wrapper(),
-      ),
+      child: Wrapper()
     );
   }
 }
